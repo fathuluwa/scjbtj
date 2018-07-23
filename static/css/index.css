@@ -1,0 +1,39 @@
+﻿/*禁止选择，为兼容IE，需同时设置标签的unselectable= "on"*/
+.noselect {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.navbar-header .logo {
+    margin-left: 10px;
+    cursor: default;
+}
+
+    .navbar-header .logo i {
+        font-size: 40px;
+        color: #1ab394;
+    }
+
+    .navbar-header .logo span {
+        font-family: 微软雅黑,黑体,宋体, Arial, verdana, sans-serif !important;
+        font-size: 20px;
+        display: inline-block;
+        margin: 15px 0 0 5px;
+        vertical-align: top;
+        color: #999;
+    }
+
+.page-tabs a.active {
+    background: #1ab394;
+    color: #fff;
+}
+
+    .page-tabs a.active i:hover, .page-tabs a.active:hover {
+        background: #18a689;
+    }
+
+.content-tabs {
+    border-bottom: solid 2px #1ab394;
+}

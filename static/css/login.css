@@ -1,0 +1,77 @@
+﻿body {
+    font-family: Microsoft Yahei !important;
+    background-color: #91e4d4!important;
+    background: url(../images/timg.png) no-repeat;
+    background-size: cover;
+}
+
+.title {
+    font-family: 微软雅黑, 黑体, 宋体, Arial, verdana, sans-serif !important;
+    font-size: 30px;
+    color: #1ab394;
+    font-weight: 800;
+    margin-bottom: 30px;
+}
+
+.loginscreen.middle-box {
+    display: table;
+    width: 400px;
+}
+
+.loginscreen .content {
+    display: table-cell;
+    vertical-align: middle;
+    margin: 0 auto;
+}
+
+.frmBorder {
+    width: 502px;
+    border: 1px solid #ddd;
+    padding: 50px;
+    box-shadow: 3px 2px 10px #333;
+    background-color: #f3f3f4;
+}
+
+.loginscreen .quickLogin {
+    display: block;
+    overflow: hidden;
+}
+
+.split {
+    margin-top: 20px;
+    border-top: 1px solid #dddddd;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+    line-height: 50px;
+}
+
+li.user {
+    position: relative;
+    float: left;
+    display: block;
+    width: 133px;
+    height: 38px;
+    padding: 10px;
+    margin: 5px 0;
+    cursor: pointer;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -ms-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s;
+}
+
+li.user i{
+    position: absolute;
+    left: 15px;
+    top: 8px;
+}
+
+li.user:hover {
+    background: #18a689;
+    color: #fff;
+}

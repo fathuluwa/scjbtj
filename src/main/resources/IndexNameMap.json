@@ -1,0 +1,12 @@
+{
+  "EArea":"椭球面积",
+  "SArea":"表面积",
+  "ELength":"椭球长度",
+  "SLength":"表面长度",
+  "Count":"个数",
+  "ConerCor":"四至坐标",
+  "EAreaORatio":"面积占比",
+  "EAreaCRatio":"面积构成比",
+  "SAreaORatio":"表面积占比",
+  "SAreaCRatio":"表面积构成比"
+}

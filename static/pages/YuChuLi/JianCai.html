@@ -1,0 +1,304 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据剪裁</title>
+    <meta name="keywords" content="数据剪裁">
+    <meta name="description" content="数据剪裁">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="../../lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="../../css/font-awesome.css" rel="stylesheet">
+    <link href="../../lib/h/style.css" rel="stylesheet">
+    <link href="../../lib/dropzone/css/basic.css" rel="stylesheet">
+    <link href="../../lib/dropzone/css/dropzone.css" rel="stylesheet">
+    <link href="../../lib/toastr/toastr.min.css" rel="stylesheet">
+    <link href="../../lib/fineuploader/fineuploader.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../../lib/checkbox/css/awesome-bootstrap-checkbox.css" />
+    <link href="../../lib/checkbox/Font-Awesome/css/font-awesome.css" rel="stylesheet" />
+    <!--alert-->
+    <link rel="stylesheet" href="../../lib/alert/popup.css" />
+    <!--end alert-->
+    <style type="text/css">
+        /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+        
+        .clearfix:after, .container:after, .tab-nav:after {
+            content: ".";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+
+        /* ==========
+           Setup Page */
+        *, *:before, *:after {
+            box-sizing: border-box;
+        }
+        .row {
+            margin-top:15px;
+        }
+        /* =================
+           Container Styling */
+        .container {
+            position: relative;
+            background: white;
+            padding: 3em;
+        }
+
+        /* ===========
+           Tab Styling */
+        .tab-group {
+            position: relative;
+            border: 1px solid #eee;
+            margin-top: 2.5em;
+            border-radius: 0 0 10px 10px;
+        }
+
+            .tab-group section {
+                opacity: 0;
+                height: 0;
+                padding: 0 1em;
+                overflow: hidden;
+                transition: opacity 0.4s ease, height 0.4s ease;
+            }
+
+                .tab-group section.active {
+                    opacity: 1;
+                    height: auto;
+                    overflow: visible;
+                }
+
+        .tab-nav {
+            list-style: none;
+            margin: -2.5em -1px 0 0;
+            padding: 0;
+            height: 2.5em;
+            overflow: hidden;
+        }
+
+            .tab-nav li {
+                display: inline;
+            }
+
+                .tab-nav li a {
+                    top: 1px;
+                    position: relative;
+                    display: block;
+                    float: left;
+                    border-radius: 4px 4px 0 0;
+                    background: #eee;
+                    line-height: 2em;
+                    padding: 0 1em;
+                    text-decoration: none;
+                    color: grey;
+                    margin-top: .5em;
+                    margin-right: 1px;
+                    transition: background .2s ease, line-height .2s ease, margin .2s ease;
+                }
+
+                .tab-nav li.active a {
+                    background: #6EB590;
+                    color: white;
+                    line-height: 2.5em;
+                    margin-top: 0;
+                }
+    </style>
+   
+</head>
+<body class="gray-bg" style="background-color:white;">
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="div" >
+            <div class="col-sm-12">
+                <div class="tab-group">
+                    <section id="tab1" title="按城市中心剪裁">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <!-- Start col-lg- 3 -->
+                                <div class="panel panel-default toggle panelRefresh panelClose showControls">
+                                    <!-- Start .panel -->
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">待剪裁区域</h4>
+                                    </div>
+                                    <div class="panel-body" id="checkboxList" style="max-height:500px;overflow-y:auto;">
+                                    </div>
+
+                                </div>
+                                <button id="uploadDataBtn" type="button" class="btn btn-primary">
+                                    开始剪裁
+                                </button>&nbsp;
+                                <!-- End .panel -->
+                            </div>
+                            <div class="col-sm-6">
+                                <!-- Start col-lg- 3 -->
+                                <div class="panel panel-default toggle panelRefresh panelClose showControls">
+                                    <!-- Start .panel -->
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">已完成剪裁区域</h4>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="scroll" id="YiJianCaiList1">
+                                            <ul class="list-group">
+                                                <li class="list-group-item">金牛区</li>
+                                                <li class="list-group-item">武侯区</li>
+                                                <li class="list-group-item">青羊区</li>
+                                                <li class="list-group-item">天府新区</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End .panel -->
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="panel panel-default toggle panelRefresh panelClose showControls">
+                                    <!-- Start .panel -->
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">简要信息提示</h4>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="scroll">
+                                           kaishi
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="tab2" title="按高程带剪裁">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <!-- Start col-lg- 3 -->
+                                <div class="panel panel-default toggle panelRefresh panelClose showControls">
+                                    <!-- Start .panel -->
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">待剪裁区域</h4>
+                                    </div>
+                                    <div class="panel-body" id="gaochenglist" style="max-height:500px;overflow-y:auto;">
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="checkbox1">
+                                            <label for="checkbox1">
+                                                金牛区
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="checkbox2">
+                                            <label for="checkbox2">
+                                                武侯区
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="checkbox2">
+                                            <label for="checkbox2">
+                                                青羊区
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="checkbox2">
+                                            <label for="checkbox2">
+                                                天府新区
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <button id="uploadDataBtn" type="button" class="btn btn-primary">
+                                    开始剪裁
+                                </button>&nbsp;
+                                <!-- End .panel -->
+                            </div>
+                            <div class="col-sm-6">
+                                <!-- Start col-lg- 3 -->
+                                <div class="panel panel-default toggle panelRefresh panelClose showControls">
+                                    <!-- Start .panel -->
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">已完成剪裁区域</h4>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="scroll">
+                                            <ul class="list-group">
+                                                <li class="list-group-item">金牛区</li>
+                                                <li class="list-group-item">武侯区</li>
+                                                <li class="list-group-item">青羊区</li>
+                                                <li class="list-group-item">天府新区</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End .panel -->
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="panel panel-default toggle panelRefresh panelClose showControls">
+                                    <!-- Start .panel -->
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">简要信息提示</h4>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="scroll">
+                                            kaishi
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="tab3" title="按坡度带剪裁">
+                        <h3>
+                            Content 3
+                        </h3>
+                        <p>
+                            Vivamus sem odio, mattis vel dui aliquet, iaculis lacinia nibh. Vestibulum tincidunt, lacus vel semper pretium, nulla sapien blandit massa, et tempor turpis urna eu mi.
+                        </p>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../../lib/jquery/jquery.js"></script>
+    <script src="../../lib/jquery/jquery.cookie.js"></script>
+    <script src="../../lib/jquery/jquery.jsoncookie.js"></script>
+    <script src="../../lib/bootstrap/js/bootstrap.js"></script>
+    <script src="../../lib/dropzone/js/dropzone.js"></script>
+    <script src="../../lib/validate/js/jquery.validate.min.js"></script>
+    <script src="../../lib/validate/js/messages_zh.min.js"></script>
+    <script src="../../lib/toastr/toastr.min.js"></script>
+    <script src="../../lib/fineuploader/all.fineuploader-5.0.2.min.js" type="text/javascript"></script>
+    <script src="../../js/log.js"></script>
+    <script src="../../js/util.js"></script>
+    <script src="../../lib/h/contabs.js"></script>
+    <script src="../../lib/tabs/jquery-tab.js"></script>
+    <!--alert-->
+    <script src="../../lib/alert/popup.js"></script>
+    <!--end alert-->   
+    <!-- Start WebSocket -->
+    <script src="../../lib/jquery/sockjs.min.js"></script>
+    <script src="../../lib/jquery/stomp.min.js"></script>
+    <!-- End WebSocket -->
+    <script src="JianCai.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            // Calling the plugin
+            $('.tab-group').tabify();
+        
+        });
+
+        function _checkChange(item, name) {
+            if ($(item).prop("checked")) {
+                var list = $('#tab1 .list-group-item');
+                for (var x in list) {
+                    if (list[x].innerHTML == name)
+                        $('#tab1 .list-group-item').eq(x).css("background-color", "#1ab394");
+                }
+            }
+            else {
+                var list = $('#tab1 .list-group-item');
+                for (var x in list) {
+                    if (list[x].innerHTML == name)
+                        $('#tab1 .list-group-item').eq(x).css("background-color", "Window");
+                }
+            }
+        };
+    </script>
+</body>
+</html>

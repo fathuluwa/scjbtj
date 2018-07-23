@@ -1,0 +1,720 @@
+/**
+ * @author 张伟佩
+ * @date 2015-03-03
+ */
+html, body {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* 微软雅黑，黑体，宋体，Arial ... */
+    font-family: Microsoft Yahei, Arial, verdana, sans-serif !important;
+    min-width: 800px;
+    min-height: 500px;
+    background-color: #FFFFFF;
+}
+
+select, option {
+    font-family: "Microsoft Yahei";
+}
+
+ul {
+    padding: 0px;
+    margin: 0px;
+    padding-left: 0px;
+    list-style: none;
+}
+
+input {
+    outline: none;
+    padding: 0px;
+    font-family: "Microsoft Yahei";
+}
+
+.mrow {
+    position: relative;
+    float: left;
+    width: 100%;
+    margin: 5px 0px;
+    padding: 2px 0px;
+}
+
+.mrow.bg {
+    padding: 10px 0px;
+}
+
+.mrow .r-2 {
+    position: relative;
+    float: left;
+    width: 20%;
+}
+
+.mrow .r-3 {
+    position: relative;
+    float: left;
+    width: 30%;
+}
+
+.mrow .r-4 {
+    position: relative;
+    float: left;
+    width: 40%;
+}
+
+.mrow .r-5 {
+    position: relative;
+    float: left;
+    width: 50%;
+}
+
+.mrow .r-6 {
+    position: relative;
+    float: left;
+    width: 60%;
+}
+
+.mrow .r-7 {
+    position: relative;
+    float: left;
+    width: 70%;
+}
+
+.mrow .r-8 {
+    position: relative;
+    float: left;
+    width: 80%;
+}
+
+label {
+    font-family: Microsoft Yahei;
+}
+
+.bootstrap-switch > div > span {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.arrow-wrap {
+    position: absolute;
+    height: 5px;
+    left: 35px;
+    width: 5px;
+    background: #1ABC9C;
+    border-top: 1px solid #FFF;
+    border-left: 1px solid #FFF;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    top: 83px;
+}
+
+.up-content {
+    width: 100%;
+    position: absolute;
+    bottom: 50px;
+    left: 0px;
+    padding: 0px 10px;
+    background-color: #596986;
+    display: none;
+}
+
+.up-content .item {
+    position: relative;
+    float: left;
+    margin: 5px 15px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 25px;
+    text-align: center;
+    border-radius: 20px;
+    cursor: pointer;
+    -webkit-transition: background-color 0.25s ease-out 0s;
+    -moz-transition: background-color 0.25s ease-out 0s;
+    transition: background-color 0.25s ease-out 0s;
+}
+
+.up-content .tag {
+    position: relative;
+    float: left;
+    margin: 5px 10px;
+    padding: 0px 2px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 20px;
+    cursor: pointer;
+    -webkit-transition: background-color 0.25s ease-out 0s;
+    -moz-transition: background-color 0.25s ease-out 0s;
+    transition: background-color 0.25s ease-out 0s;
+}
+
+.up-content .item:hover, .up-content .item.active, .up-content .tag:hover, .up-content .tag.active {
+    background-color: #1abc9c;
+}
+
+/* 自定义分页控件 */
+.vp {
+    background-color: #2f4050;
+    height: 30px;
+    left: 0;
+    right: 0;
+    color: #FFF;
+    text-align: center;
+    line-height: 30px;
+    position: absolute;
+    bottom: 0;
+    border-top: 1px solid #333;
+}
+
+.vp .firstP, .vp .prevP, .vp .nextP, .vp .lastP, .vp .curP {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 30px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.vp .firstP:hover, .vp .prevP:hover, .vp .nextP:hover, .vp .lastP:hover {
+    border-color: #FFF;
+}
+
+.vp .firstP {
+    left: 10px;
+}
+
+.vp .prevP {
+    left: 60px;
+}
+
+.vp .nextP {
+    right: 60px;
+}
+
+.vp .lastP {
+    right: 10px;
+}
+
+.vp .curP {
+    cursor: default;
+    margin: 0px auto;
+    left: 50%;
+    margin-left: -20px;
+}
+
+/*
+ * ==============================重写地图infoWindow==============================
+ */
+.esriPopup .titleButton.maximize, .esriPopup .actionsPane {
+    display: none;
+}
+
+.esriPopup .titlePane {
+    background-color: #333;
+    height: 30px;
+    line-height: 30px;
+    font-family: Microsoft Yahei;
+}
+
+.esriPopup .titleButton.close {
+    top: 6px;
+    right: 5px;
+}
+
+.esriPopup .sizer {
+    width: 350px;
+}
+
+.esriPopup select {
+    position: relative;
+    float: left;
+    height: 34px;
+    margin: 0px;
+    padding: 0px;
+    margin-top: 10px;
+}
+
+.esriPopup .contentPane {
+    font-family: Microsoft Yahei;
+    overflow: hidden;
+    max-height: 800px;
+}
+
+.esriPopup .item {
+    overflow: auto;
+    max-height: 350px;
+}
+
+.esriPopup .frm-footer {
+    position: relative;
+    float: left;
+    height: 50px;
+    width: calc(100% - 20px);
+}
+
+.esriPopup .frm-footer p {
+    float: left;
+    padding: 0px;
+    width: 72px;
+    margin: 0px;
+    font-weight: bold;
+    padding-left: 8px;
+    line-height: 50px;
+    font-size: 13px;
+}
+
+.esriPopup input {
+    position: relative;
+    float: left;
+    line-height: 32px;
+    padding: 0px 2px;
+    margin: 10px 0px 7px 7px;
+    width: 180px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid #333;
+    font-family: Microsoft Yahei;
+}
+
+.esriPopup .sbutton {
+    position: relative;
+    float: left;
+    height: 34px;
+    line-height: 34px;
+    width: 36px;
+    background-color: #333;
+    text-align: center;
+    color: #ffffff;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.esriPopup #searchCross {
+    width: auto;
+    float: right;
+    border-radius: 5px;
+    padding: 2px 5px;
+}
+
+.esriPopup .sbutton:hover {
+    background-color: #186AB1;
+}
+
+/*
+ * ==============================通用==============================
+ */
+
+/*
+ * 加载效果
+ */
+.loading-msg {
+    position: absolute;
+    color: #333;
+    font: normal 24px/50px "Microsoft YaHei";
+    text-align: center;
+    background: #FFF;
+    width: 100%;
+    top: 0;
+    height: 100%;
+    margin: 0 auto;
+    left: 0;
+    z-index: 9999;
+}
+
+.loading-text {
+    position: relative;
+    float: left;
+    padding: auto 0px;
+    width: 100%;
+    top: 50%;
+    margin-top: -45px;
+}
+
+.loading-box {
+    position: relative;
+    float: left;
+    padding: 10px 5px 30px 5px;
+    width: 100%;
+    top: 50%;
+}
+
+@keyframes loading {
+    0% {
+        left: 0;
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+    }
+    95% {
+        opacity: 1;
+    }
+    100% {
+        left: 100%;
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes loading {
+    0% {
+        left: 0;
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+    }
+    95% {
+        opacity: 1;
+    }
+    100% {
+        left: 100%;
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes loading {
+    0% {
+        left: 0;
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+    }
+    95% {
+        opacity: 1;
+    }
+    100% {
+        left: 100%;
+        opacity: 0;
+    }
+}
+
+@-o-keyframes loading {
+    0% {
+        left: 0;
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+    }
+    95% {
+        opacity: 1;
+    }
+    100% {
+        left: 100%;
+        opacity: 0;
+    }
+}
+
+.loading {
+    width: 5px;
+    height: 5px;
+    background: #333;
+    position: absolute;
+    opacity: 0;
+    animation: loading 2s;
+    -moz-animation: loading 2s;
+    -webkit-animation: loading 2s;
+    -o-animation: loading 2s;
+    animation-timing-function: cubic-bezier(0.1, 0.48, 0.9, 0.52);
+    -webkit-animation-timing-function: cubic-bezier(0.1, 0.48, 0.9, 0.52);
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+}
+
+.loading[index="0"] {
+    animation-delay: 0.15s;
+    -webkit-animation-delay: 0.15s;
+}
+
+.loading[index="1"] {
+    animation-delay: 0.3s;
+    -webkit-animation-delay: 0.3s;
+}
+
+.loading[index="2"] {
+    animation-delay: 0.45s;
+    -webkit-animation-delay: 0.45s;
+}
+
+.loading[index="3"] {
+    animation-delay: 0.6s;
+    -webkit-animation-delay: 0.6s;
+}
+
+.loading[index="4"] {
+    animation-delay: 0.75s;
+    -webkit-animation-delay: 0.75s;
+}
+
+/*
+ * ==============================地图==============================
+ */
+#map-content {
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    bottom: 0px;
+    background-color: #FFF;
+    z-index: 10;
+}
+
+#mapDiv {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    float: left;
+}
+
+.coordinate {
+    background-color: rgba(255, 255, 255, 0);
+    bottom: 22px;
+    color: #000;
+    cursor: default;
+    font-size: 13px;
+    font-weight: bold;
+    left: 240px;
+    padding-left: 2px;
+    padding-right: 2px;
+    position: absolute;
+}
+
+.esriSimpleSliderTR {
+    right: 24px;
+    top: 20px;
+}
+
+.scalebar_bottom-left {
+    bottom: 5px;
+    color: #333;
+}
+
+/*
+ * ==============================项目列表==============================
+ */
+#listDiv {
+    width: 300px;
+    position: absolute;
+    top: 20px;
+    bottom: 40px;
+    left: 25px;
+    border: 1px solid #333;
+    z-index: 1;
+    background: #fff;
+    border-radius: 5px;
+}
+ #planMapListDiv {
+    width: 200px;
+    position: absolute;
+    top: 20px;
+    bottom: 40px;
+    height: 300px;
+    left: 25px;
+    border: 1px solid #333;
+    z-index: 1;
+    background: #fff;
+    border-radius: 5px;
+}
+#assistResult {
+    width: 100%;
+    height: 35%;
+    border: 1px solid #333;
+    z-index: 1;
+    background: #f5f4ee;
+    position: relative;
+    float: left;
+}
+#minList {
+    display: block;
+    background: #2f4050;
+    line-height: 35px;
+    color: #fff;
+    padding-left: 10px;
+    position: absolute;
+    top: 20px;
+    left: 24px;
+    width: 100px;
+    border-radius: 5px;
+    border: 1px solid;
+    display: none;
+    z-index: 1;
+}
+
+#minList i {
+    display: block;
+    float: right;
+    line-height: 34px;
+    margin-right: 10px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+#listDiv .title {
+    display: block;
+    background: #2f4050;
+    line-height: 35px;
+    color: #fff;
+    padding-left: 10px;
+}
+
+#listDiv .title i {
+    float: right;
+    line-height: 35px;
+    margin-right: 25px;
+    cursor: pointer;
+}
+#planMapListDiv .title {
+    display: block;
+    background: #2f4050;
+    line-height: 35px;
+    color: #fff;
+    padding-left: 10px;
+}
+
+#planMapListDiv .title i {
+    float: right;
+    line-height: 35px;
+    margin-right: 25px;
+    cursor: pointer;
+}
+#clearResultTable
+{
+    position: absolute;
+    top: -20px;
+    right: 0px;
+    border: 1px solid #333;
+    cursor: pointer;
+}
+#reshowResultTable
+{
+  width:30px;
+  height:20px;
+  bottom:0px;
+  right:5px;
+  border: 1px solid #333;
+  z-index: 4;
+  position: absolute;
+  
+  }
+  
+  #reshowResultTable1
+{
+  width:30px;
+  height:20px;
+  bottom:0px;
+  right:5px;
+  border: 1px solid #333;
+  z-index: 4;
+  position: absolute;
+  
+  }
+  
+ul.pros {
+    padding: 5px 10px;
+    position: absolute;
+    width: 100%;
+    bottom: 30px;
+    top: 35px;
+    overflow: auto;
+}
+
+li.pro {
+    line-height: 40px;
+    border-bottom: 1px solid;
+}
+
+li.pro a {
+    float: right;
+    padding-right: 15px;
+    height: 40px;
+    overflow: hidden;
+}
+
+li.pro .iconfont {
+    color: #2f4050;
+}
+
+a.active .iconfont {
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+    color: #18a689;
+    font-size: 20px;
+}
+
+#clearMap {
+    position: absolute;
+    right: 24px;
+    width: 30px;
+    height: 30px;
+    top: 90px;
+    border: 1px solid;
+    line-height: 30px;
+    color: #000;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 2;
+    background-color: #fff;
+}
+
+.titlePane {
+    position: absolute;
+    right: 70px;
+    width: 70px;
+    height: 30px;
+    top: 20px;
+    border: 1px solid;
+    line-height: 30px;
+    color: #000;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 2;
+    background-color: #fff;
+}
+
+#clearMap:hover {
+    background-color: #eee;
+}
+
+#addData{
+    position: absolute;
+    right: 170px;
+    width: 60px;
+    height: 30px;
+    top: 20px;
+    border: 1px solid;
+    line-height: 30px;
+    color: #000;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 2;
+    background-color: #fff;
+}
+#approveAssist{
+    position: absolute;
+    right: 100px;
+    width: 60px;
+    height: 30px;
+    top: 20px;
+    border: 1px solid;
+    line-height: 30px;
+    color: #000;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 2;
+    background-color: #fff;
+}
