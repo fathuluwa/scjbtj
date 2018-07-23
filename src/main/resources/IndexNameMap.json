@@ -1,12 +1,12 @@
 {
-  "EArea":"æ¤­çƒé¢ç§¯",
-  "SArea":"è¡¨é¢ç§¯",
-  "ELength":"æ¤­çƒé•¿åº¦",
-  "SLength":"è¡¨é¢é•¿åº¦",
-  "Count":"ä¸ªæ•°",
-  "ConerCor":"å››è‡³åæ ‡",
-  "EAreaORatio":"é¢ç§¯å æ¯”",
-  "EAreaCRatio":"é¢ç§¯æ„æˆæ¯”",
-  "SAreaORatio":"è¡¨é¢ç§¯å æ¯”",
-  "SAreaCRatio":"è¡¨é¢ç§¯æ„æˆæ¯”"
+  "EArea":"ÍÖÇòÃæ»ı",
+  "SArea":"±íÃæ»ı",
+  "ELength":"ÍÖÇò³¤¶È",
+  "SLength":"±íÃæ³¤¶È",
+  "Count":"¸öÊı",
+  "ConerCor":"ËÄÖÁ×ø±ê",
+  "EAreaORatio":"Ãæ»ıÕ¼±È",
+  "EAreaCRatio":"Ãæ»ı¹¹³É±È",
+  "SAreaORatio":"±íÃæ»ıÕ¼±È",
+  "SAreaCRatio":"±íÃæ»ı¹¹³É±È"
 }

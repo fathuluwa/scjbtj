@@ -3,7 +3,6 @@ package com.scgp.BootTest.dao;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.extern.log4j.Log4j;
 
 /**
  * @ProjectName: SCJBTJ
@@ -15,8 +14,8 @@ import lombok.extern.log4j.Log4j;
  * @Version: 1.0
  */
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 public class ProcessConfigInfo {
     private String[] cut1Boua;
     private String[] cutLayers;

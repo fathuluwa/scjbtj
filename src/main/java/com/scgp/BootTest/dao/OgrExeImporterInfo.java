@@ -3,7 +3,6 @@ package com.scgp.BootTest.dao;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.extern.log4j.Log4j;
 
 /**
  * @ProjectName: SCJBTJ
@@ -14,9 +13,10 @@ import lombok.extern.log4j.Log4j;
  * @CreateDate: 2018/6/26 16:00
  * @Version: 1.0
  */
+
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 public class OgrExeImporterInfo {
     private String ogrPath;
     private String dataPath;

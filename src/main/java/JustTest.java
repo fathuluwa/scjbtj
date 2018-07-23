@@ -46,7 +46,7 @@ public class JustTest {
 
     @Test
     public void getFils(){
-        File file=new File("F:\\scgp\\vector");
+        File file=new File("D:\\scgp\\vector");
         File[] files=file.listFiles();
         ArrayList<String> fileNameList=new ArrayList<>();
         for(int i=0;i<files.length;i++){
